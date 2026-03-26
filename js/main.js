@@ -1,13 +1,10 @@
 function annaNimi() {
 const nimet = []
 let length = nimet.length;
-if (length = 10) {
-    return
+while (length != 10) {
+let person = prompt("anna nimi")
+nimet.push(person)
+length = nimet.length
 }
-
-else {
-        let person = prompt("anna nimi")
-        nimet.push(person)
-}
-
+return
 }
