@@ -10,9 +10,10 @@ if (person == "" || person == null) {
     return
 }
 else {
-    text += length + ". " + person;
+    text += length + ". " + person + "<br>";
 }
 
 }
 document.getElementById("lista").innerHTML = text;
 }
+
