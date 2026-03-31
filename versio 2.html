@@ -16,14 +16,43 @@
     <hr>
 
     <p>Anna nimi:</p>
-    <form name="nimi">
         <input type="text" name="nimi" id="nimi">
-        <button id="lisaa">Lisää Kaveri</button>
-        <button id="poista">Poista Kaveri</button>
-        <button id="lajittele">Järjestä Kaverit</button>
-    </form>
+        <button onclick="lisaa()">Lisää Kaveri</button>
+        <button onclick="poista()">Poista Kaveri</button>
+        <button onclick="jarjesta()">Järjestä Kaverit</button>
 
-    <script src="js/main.js"></script>
+    <ul id="kaverit"></ul>
+
+    <script>
+        function lisaa() {
+            var kaverilista =
+            document.getElementById("kaverit");
+            var nimi =
+            document.getElementById("nimi");
+            var li = 
+            document.createElement("li");
+            li.setAttribute('id', nimi.value);
+            li.appendChild(document.createTextNode(nimi.value));
+            kaverilista.appendChild(li);
+        }
+
+        function poista() {
+            var kaverilista = 
+            document.getElementById("kaverit");
+            var nimi = 
+            document.getElementById("nimi");
+            var item = 
+            document.getElementById(nimi.value);
+            kaverilista.removeChild(item);
+        }
+        function jarjesta() {
+            var kaverilista = 
+            document.getElementById("kaverit");
+            var nimi = 
+            document.getElementById("nimi");
+            kaverilista.sort()
+        }
+    </script>
     
 </body>
 </html>
