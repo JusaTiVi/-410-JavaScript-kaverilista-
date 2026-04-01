@@ -49,10 +49,24 @@
             kaverilista.removeChild(item);
         }
         function jarjesta() {
-            var kaverilista = 
-                document.getElementById("kaverit");
-            var nimi = 
-                document.getElementById("nimi");
+            var kaverilista, i, switching, b, shouldSwitch;
+            kaverilista = document.getElementById("kaverit")
+            switching = true;
+            while (switching) {
+                switching = false;
+                nimet = kaverilista.getElementsByTagName("LI");
+                for (i = 0; i < (nimet.length - 1); i++) {
+                    shouldSwitch = false;
+                    if (nimet[i].innerHTML.toLowerCase() > nimet[i + 1].innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    nimet[i].parentNode.insertBefore(nimet[i + 1], nimet[i]);
+                    switching = true;
+                }
+            }
         }
     </script>
     
